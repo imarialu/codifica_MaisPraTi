@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #202f49;
+    font-family: 'Roboto'
+}
+
+h2{
+    padding: 0.5rem;
+    padding-bottom: 30px;
+    text-align: center;
+    font-family: 'Handlee';
+}
+
+.container{
+    width: 90%;
+    max-width: 500px;
+    padding: 2rem;
+    border-radius: 10px;
+    color: #202f49;
+    background-color: #ebe7dd;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#input-item{
+    flex: 1;
+    height: 2rem;
+    padding: 0.5rem;
+    border-radius: 15px;
+    border: 1px solid #202f49;
+    font-size: 14px;
+    color: #202f49;
+    background-color: transparent;
+}
+
+#input-item::placeholder{
+    color: #202f49;
+}
+
+#input-item:focus{
+    outline: 0;
+}
+
+form button{
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bold;
+    color: ebe7dd#;
+    background-color: #202f49;
+    border: 2px solid #202f49;
+}
+
+ul{
+    list-style: none;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    color: #202f49;
+    font-size: 18px;
+}
+
+li:nth-child(odd){
+    background-color: #e4dfd4;
+}
+
+#remover{
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-weight: bold;
+    color: #ebe7dd;
+    background-color: #202f49;
+}
+
+#remover:hover{
+    color: #202f49;
+    background-color: transparent;
+}
+
+.container-button{
+    display: flex;
+    justify-content: center;
+}
+
+.limpar {
+    padding: 0.5rem 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bolder;
+    color: #202f49;
+    background-color: transparent;
+    border: 1px solid #202f49;
+}
+
+.limpar:hover {
+    color: #ebe7dd;
+    background-color: #202f49;
+}
+
+.container-controles{
+    display: flex;
+    justify-content: center;
+}
+
+.selectors{
+    margin-top: 0.5rem;
+}
+
+
+

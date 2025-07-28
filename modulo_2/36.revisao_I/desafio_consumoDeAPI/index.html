@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FILMES</title>
+</head>
+<body>
+    <h1>Encontre o seu filme!</h1>
+    <input type="text" id="filme" placeholder="Insira o nome do filme">
+    <button id="buscar" onclick="buscarFilme()">Pesquisar</button>
+
+    <div id="resultado"></div>
+
+    
+
+    <script>
+        const inputFilme = document.getElementById('filme');
+        const btnBuscar = document.getElementById('buscar');
+        const divResultado = document.getElementById('resultado');
+
+        async function buscarFilme(){
+            const filme = inputFilme.value;
+
+            const url = `http://www.omdbapi.com/?apikey=88f8f95c&s=${filme.trim().split(' ').join('+')}`;
+            
+            try{
+                const resp = await fetch(url, {method: 'GET'});
+                const data = await resp.json();
+                console.log(data)
+                divResultado.innerHTML = "";
+
+                data.Search.forEach(element => {
+                    divResultado.innerHTML += 
+                        `<ul>
+                            <img src="${element.Poster}" alt="">
+                            <li>Filme: ${element.Title}</li>
+                            <li>Lançamento: ${element.Year}</li>
+                        </ul>`
+                });
+            }catch (error){
+                divResultado.innerHTML = error
+            }
+        }
+    </script>
+</body>
+</html>

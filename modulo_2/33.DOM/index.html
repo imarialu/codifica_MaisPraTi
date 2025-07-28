@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Document Objetct Model e BOM - Browser Object Model</title>
+    <style>
+        body{
+            font-family: 'Arial';
+        }
+
+        button{
+            width: 120px;
+            height: 30px;
+            color: white;
+            background-color: rgb(109, 25, 25);
+            border: none;
+            border-radius: 15px;
+        }
+
+        li{
+            width: 50px;
+            padding-top: 15px;
+            border-bottom: 1px solid rgb(109, 25, 25);
+        }
+
+        p{
+            width: 300px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px 0px;
+            background-color: rgb(126, 148, 219);
+            font-size: 32px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .focado{
+            background-color: rgb(145, 87, 199);
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">Título Original</h1>
+    <button onclick="alterarTitulo()">Alterar título</button>
+
+    <ul id="lista"></ul>
+    <button onclick="adicionarItem()">Adicionar Item</button>
+
+    <p id="paragrafo">Modern Family</p>
+
+    <button onclick="mostrarDialogos()">Iniciar</button>
+
+    <script>
+        const titulo = document.getElementById('titulo');
+        // Altera o título principal
+        function alterarTitulo(){
+            titulo.textContent = 'Novo Título';
+        }
+
+        const lista = document.getElementById('lista');
+        let contador = 1; // Contador inicia com 1
+        function adicionarItem(){
+            const item = document.createElement('li'); // Cria um novo elemento, uma li
+            item.textContent = `Item ${contador++}` // O conteudo será "Item" + a iteração do contador
+
+            lista.appendChild(item); // Adiciona o item na lista
+        }
+
+        const p = document.getElementById('paragrafo');
+        // Quando passar o mouse pelo elemento, ele adiciona a estilização
+        p.addEventListener('mouseover', () => {
+            p.classList.add('focado')
+        })
+
+        p.addEventListener('mouseout', () => {
+            p.classList.remove('focado')
+        })
+
+        // Manipulando o BOM
+        function mostrarDialogos(){
+            alert("Bem-vindo!");
+            const nome = prompt("Qual seu nome?");
+
+            if(confirm(`Confirmar nome: ${nome}`)){
+                alert(`Oi, ${nome}!`)
+            }else{
+                alert("Você cancelou a confirmação.")
+            }
+        }
+
+    </script>
+</body>
+</html>

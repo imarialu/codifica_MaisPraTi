@@ -1,0 +1,81 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Seletores de Tipo */
+h1{
+    color: rgb(173, 110, 233);
+}
+
+p{
+    color: gray;
+}
+
+/* Seletores de Classe */
+
+.destaque{
+    background-color: rgb(176, 240, 219);
+}
+
+/* Seletores identificadores */
+#cabecalho{
+    background-color: rgb(173, 110, 233);
+    color: white;
+}
+
+#cabecalho h1{
+    color: white;
+}
+
+/* Seletores combinados */
+ul li{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Seletor descendente*/
+ul li.importante{
+    color: brown;
+}
+
+/* Seletores de pseudoclasses */
+a:hover{
+    text-decoration: none;
+    color: violet;
+}
+
+/* 
+    Seletor inline: 1000
+    Seletor de ID: 100
+    Seletor de Classe: 10
+    Seletor de Tipo: 1
+*/
+
+h1, h2{
+    text-align: center;
+}
+
+/* Herança */
+
+div{
+    margin: 10px;
+    border: 1px solid brown;
+}
+
+div p{
+    border: inherit; /* Forçando uma herança*/
+}
+
+/* Relações */
+
+/* Seleciona o paragrafo imediatamente após o h1 */
+h1 + p{
+    color: rgb(17, 134, 17);
+}
+
+/* ignifica que o a dentro do h2 vai receber essa estilização */
+h2 > a{
+    color: brown;
+}
+

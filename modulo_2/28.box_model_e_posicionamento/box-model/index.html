@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model - Dimensões</title>
+    <style>
+        body{
+            font-size: 20px;
+        }
+
+        div{
+            border: 1px solid brown;
+        }
+
+        h2{
+            border: inherit;
+            width: 200px;
+            height: 100px;
+            padding: 10px;
+            margin: 10px;
+            box-sizing: border-box; /* Define o tamanho independente do padding e border (200px e 100px)*/
+        }
+        
+        div.content h2{
+            font-size: 2rem; /* Duas vezes o tamanho do elemento raiz (body) */
+        }
+
+
+        div.dimensoes{
+            font-size: 12px;
+        }
+
+        div.dimensoes h2{
+            border: inherit;
+            font-size: 2em; /* Duas vezes o tamanho do elemento pai (div.dimensoes) */
+        }
+
+        /* 
+            Unidades de medida:
+            cm - unidade absoluta
+            em - unidade relativa - relativa ao elemento pai
+            rem - unidade relativa - relativo ao elemento raiz
+            vh (viewport) - relativa a janela do navegador
+        */
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>Conteúdo</h2>
+    </div>
+    
+    <div class="dimensoes">
+        <h2>Conteúdo</h2>
+    </div>
+</body>
+</html>
