@@ -1,0 +1,8 @@
+{
+    // Define um conjunto de configurações pré-determinadas (presets) que o Babel vai usar para transformar o código JavaScript
+    "presets":[
+        // Permite que o Babel converta código moderno em uma versão mais compatível com navegadores antigos
+        "@babel/preset-env", 
+        // Permite que o Babel transforme código JSX e outros recursos específicos do React em JavaScript comum
+        "@babel/preset-react"]
+}
