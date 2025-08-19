@@ -1,0 +1,21 @@
+import { createContext, useContext, useMemo, useCallback, useState } from "react";
+
+const ThemeContext = createContext(null);
+
+export function ThemeProvider({children}){
+    const [theme, setTheme] = useState("light");
+
+    const toggleTheme = useCallback(() => {
+        setTheme((t) => (t === "light" ? "dark" : "light"));
+    }, []);
+
+    const value = useMemo(() => ({theme, toggleTheme}), [theme, toggleTheme]);
+
+    return <ThemeContext value={value}>{children}</ThemeContext>
+}
+
+export function useTheme(){
+    const ctx = useContext(ThemeContext);
+    if(!ctx) throw new Error("Você precisa usar o hook dentro do Provedor correto.");
+    return ctx;
+}
