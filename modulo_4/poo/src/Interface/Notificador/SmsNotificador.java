@@ -1,4 +1,4 @@
-package Interface;
+package Interface.Notificador;
 
 public class SmsNotificador implements EnviadorNotificacao{
     @Override

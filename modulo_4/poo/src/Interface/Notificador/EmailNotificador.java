@@ -1,4 +1,4 @@
-package Interface;
+package Interface.Notificador;
 
 public class EmailNotificador implements EnviadorNotificacao{
     @Override
